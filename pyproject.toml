@@ -12,7 +12,10 @@ dependencies = [
   "torch",
   "torchvision",
   "torchaudio",
-  "z3-solver"
+  "z3-solver",
+  "Pillow",
+  "albumentations",
+  "tqdm"
 ]
 
 [[tool.uv.index]]
