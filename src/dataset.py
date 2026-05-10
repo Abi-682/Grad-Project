@@ -101,7 +101,7 @@ def get_transforms(phase="train", image_size=224):
             A.Rotate(limit=15, p=0.7),
             A.GaussNoise(p=0.3),
             A.RandomBrightnessContrast(brightness_limit=0.2, contrast_limit=0.2, p=0.5),
-            A.Zoom(min_ratio=0.9, max_ratio=1.1, p=0.5),
+            A.Affine(scale=(0.9, 1.1), p=0.5),  # Changed from A.Zoom to A.Affine with scale
             A.Normalize(
                 mean=[0.485, 0.456, 0.406],
                 std=[0.229, 0.224, 0.225]

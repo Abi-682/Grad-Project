@@ -4,6 +4,7 @@ Contains all hyperparameters, paths, and crack shape definitions
 """
 
 import os
+import torch
 from pathlib import Path
 
 # ============================================================================
@@ -98,7 +99,7 @@ AUGMENTATION_CONFIG = {
 # ============================================================================
 # TRAINING CONFIG
 # ============================================================================
-DEVICE = "cuda"  # or "cpu"
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"  # Auto-detect GPU
 NUM_WORKERS = 4
 PIN_MEMORY = True
 GRADIENT_CLIP = 1.0
